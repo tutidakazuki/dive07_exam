@@ -1,11 +1,3 @@
 <h1>ツイートを編集</h1>
 
-<%= form_for(@tweet) do |f| %>
-  
-  <%= f.label :content %>
-  <%= f.text_field :content %>
-  <br>
-  <%= f.submit %>
-<% end %>
-
-<%= link_to "一覧を見る", tweets_path %>
+<%= render 'form' %>

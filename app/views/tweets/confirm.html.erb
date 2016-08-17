@@ -1,0 +1,14 @@
+<h1>確認画面</h1>
+
+<%= form_for(@tweet) do |f| %>
+
+    <%= f.hidden_field :content %>
+    
+    <p>本文：<%= @tweet.content %></p>
+    <%= f.submit "ツイートを投稿" %>
+<% end %>
+
+<%= form_for(@tweet, url: new_tweet_path, method: 'get') do |f| %>
+  <%= f.hidden_field :content %>
+  <%= f.submit "もどる", name: 'back' %>
+<% end %>
