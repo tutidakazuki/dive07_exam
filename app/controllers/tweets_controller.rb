@@ -4,6 +4,12 @@ class TweetsController < ApplicationController
     
     def index
         @tweets = Tweet.all
+        
+        if params[:back]
+            @tweet = Tweet.new(tweets_params)
+        else
+            @tweet = Tweet.new
+        end
     end
    
     def new
@@ -41,7 +47,7 @@ class TweetsController < ApplicationController
     
     def confirm
         @tweet = Tweet.new(tweets_params)
-        render :new if @tweet.invalid?
+        render 'new' if @tweet.invalid?
     end
     
     

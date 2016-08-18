@@ -1,3 +1,5 @@
+<div class="container">
+
 <h1>確認画面</h1>
 
 <%= form_for(@tweet) do |f| %>
@@ -5,10 +7,12 @@
     <%= f.hidden_field :content %>
     
     <p>本文：<%= @tweet.content %></p>
-    <%= f.submit "ツイートを投稿" %>
+    <p><%= f.submit "投稿",class: 'btn btn-primary btn-block' %></p>
 <% end %>
 
-<%= form_for(@tweet, url: new_tweet_path, method: 'get') do |f| %>
+<%= form_for(@tweet, url: tweets_path, method: 'get') do |f| %>
   <%= f.hidden_field :content %>
-  <%= f.submit "もどる", name: 'back' %>
+  <p><%= f.submit "もどる", name: 'back',class: 'btn btn-primary btn-block' %></p>
 <% end %>
+
+</div>
